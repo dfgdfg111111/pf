@@ -1,6 +1,6 @@
 $(document).ready(function(){  
-  
    
+ 
    var menuItem = $ ('#nav li a'); //메뉴 버튼을 변수로
 
    $menuItem.click(function(){

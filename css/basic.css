@@ -9,22 +9,35 @@ a { text-decoration:none; }
 img { border:0; vertical-align:bottom; }
 body { font-family:'NanumSquare', Helvetica, sans-serif; box-sizing: border-box;}
 
-header { position:fixed; top:0; left:0; width:100%; background:#f2f3f7b9; border-top: 1px solid ;  height:80px; bottom: 0; z-index: 1000;}
+/*헤더*/
+header { position:fixed; top:0; left:0; width:100%; background:#f5f6fc; border-top: 1px solid ;  height:80px; bottom: 0; z-index: 1000;}
+#header_in {height:80px;border-bottom: 1px solid #4061d6; overflow: hidden;}
 header h1 { position:absolute; display:block; width:40px; height:40px; background:url('../img/logo.png') no-repeat; background-size:contain; text-indent:-9999px; margin-top:1%; left:10%;}
 
-header #nav {float: right; margin-top:35px; margin-right:13%; border-bottom:solid 2px #7f93de;}
+header #nav {float: right; margin-top:35px; margin-right:13%;}
 header #nav li { display: inline-block; margin: auto;  padding:0 15px;}
 header #nav a { color:#7f93de; font-size:19px; font-family: 'NanumSquare', sans-serif; text-shadow:0px 2px 2px rgb(172, 172, 172); font-weight: bold; }
 
 header #nav a:hover {color:#4061d6; transition: 0.2s;}
 
+/*버튼*/
+#btn_box {position: fixed; right: 30px; top:50%; transform: translateY(-50%); z-index: 1000; }
+#btn_box ul {}
+#btn_box li {margin: 10px 0;}
+#btn_box a {display: block; width: 8px; height: 8px; background:#4061d6;border-radius: 10px;  text-indent: -9999px;} 
+#btn_box li.on.a {background:rgb(0, 0, 0);}
 
+/*섹션*/
 section { height:100vh; overflow: hidden;} 
 
 #section01 {position: relative; }
-#section01 h2 { position: absolute; right: 13%;  font-family: 'Numans', sans-serif; color:#4061d6;font-size: 4vw; letter-spacing: 3px; 
+#section01 .line1 {position: absolute;bottom: 0%; left: 5%;width: 1px; height: 92%; background: #4061d6;}
+
+    
+    
+#section01 h2 { position: absolute;left: 50%; transform: translate(-50%);  font-family: 'Numans', sans-serif; color:#4061d6;font-size: 4vw; letter-spacing: 3px; 
     text-shadow:0px 5px 5px rgba(0, 0, 0, 0.137);  top:30%; 
-    font-style: italic; text-align: right; font-weight: bold;
+    font-style: italic; text-align: left; font-weight: bold;
     border-bottom: 3px solid rgba(255, 255, 255, 0.103);} 
 .name {font-size: 7vw;}
 .b_ {position: absolute; width: 100%; top:15%; right: 0;  height: 4px; background-color: #7f93de;} 
@@ -33,7 +46,10 @@ section { height:100vh; overflow: hidden;}
 
 
 #section02 {position:relative;}
-
+.pro {position:absolute; top:0; width:100%; height:1px;  background:#4061d6; z-index:1; }
+   
+#section02 .aboutback2 p { font-size:1.6vw; font-weight:bold; color:#fafaf8; 
+    line-height:40px; margin-left:20px; }
 .m_img {position: absolute;top:9%; left: 20%; z-index: 1; margin: 0 auto;}
 .m_img img { height:180px;}
 .p_inner {position: relative; top:20%; margin: 0 auto; max-width: 1000px; height: 600px; border-radius: 40px;background-color:  #7f93de; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);  }
@@ -65,6 +81,16 @@ section { height:100vh; overflow: hidden;}
 .v_s:hover {background-color:#f2f3f7; border: 1px solid #4061d6;}
 .v_s:hover a {color: #4061d6;} 
 
+/*스크롤바*/
+.icon_scroll{position:absolute; display:flex; flex-direction:column;align-items:center;padding-bottom:20px;left:50%;bottom:10%;transform:translateX(-50%);user-select:none}
+.icon_scroll .txt_scroll{font-size: 13px ;color:#4061d6;padding-bottom: 5px;}
+.icon_scroll .arrows_scroll span {position: absolute;display:block;bottom:0;left: 50%;width: 10px;height: 10px;margin-left: -6px;border-left: 1px solid#4061d6;border-bottom: 1px solid #4061d6;-webkit-transform: rotate(-45deg);transform: rotate(-45deg);animation: scrollDown 2s infinite;opacity: 0;}
+.icon_scroll .arrows_scroll span:nth-of-type(1) {animation-delay: .3s;}
+.icon_scroll .arrows_scroll span:nth-of-type(2) {bottom:7px;animation-delay: .15s;}
+.icon_scroll .arrows_scroll span:nth-of-type(3) {bottom:14px;animation-delay: 0s;}
+
+@-webkit-keyframes scrollDown { 0% {opacity: 0;} 50% {opacity: 1;} 100% {opacity: 0;} }
+@keyframes scrollDown {  0% {opacity: 0;} 50% {opacity: 1;} 100% {opacity: 0;} }
 
 #section04 {position: relative;}
 #section04 h3 {font-size: 40px; font-weight: bold ;text-shadow:0px 3px 3px rgb(212, 212, 212);}
@@ -104,23 +130,23 @@ section { height:100vh; overflow: hidden;}
 .topBtn{position: absolute; right: 13%; bottom: 15%; width: 50px;  background-color:#c0c3cf; border-radius: 5px; padding: 5px;text-align: center;  }
 .topBtn a {color: #fff;font-size: 14px;line-height: 25px; }
 
-.bb {position: fixed; bottom:0; height: 50px; left: 0; right: 0; line-height: 50px; background-color: #4061d6; text-align: center;color: #fff;}
+.bb {position: fixed; border-top: 1px solid #fff; bottom:0; height: 50px; left: 0; right: 0; line-height: 50px;z-index: 1000; background-color: #4061d6; text-align: center;color: #fff;}
 
 
-#section01 { background:#f2f3f7; }
-#section02 { background:#f2f3f7;}
-#section03 { background:#f2f3f7;}
-#section04 { background:#f2f3f7;}
-#section05 { background:#f2f3f7; }
-#section06 { background:#f2f3f7;}
-#section07 { background:#f2f3f7;}
+#section01 { background:#f5f6fc; }
+#section02 { background:#f5f6fc;}
+#section03 { background:#f5f6fc;}
+#section04 { background:#f5f6fc;}
+#section05 { background:#f5f6fc; }
+#section06 { background:#f5f6fc;}
+#section07 { background:#f5f6fc;}
 
 
 
 /************************************* 화면 너비가 1440px 보다 작을때 *********************************************/
 @media (max-width:1440px){  
 
- 
+#section01 .line1 {position: absolute;bottom: 0%; right: 5%;width: 1px; height: 91.5%; background: #4061d6;}
  
  .m_img {position: absolute; top:9%; left: 15%; z-index: 1; }
  .m_img img { height:150px;}
@@ -186,6 +212,10 @@ section { height:100vh; overflow: hidden;}
  header #nav a {font-size: 17px;}
  header h1 { width:35px;margin-top:22px;}
 
+
+
+
+
 .m_img {position: absolute; top:12%; left: 15%;}
 .m_img img { height:130px;}
 .p_inner {position: relative; top:22%; margin: 0 auto; max-width:90%; height: 500px; }
@@ -231,7 +261,7 @@ section { height:100vh; overflow: hidden;}
 section { height:100vh; margin: auto;  } 
 body {width: 100%; overflow-x: hidden;} 
  
-header { position:fixed; top:0; left:0; width:100%; background:#f2f3f7b9; bottom: 0; z-index: 1000;}
+header { position:fixed; top:0; left:0; width:100%; background:#f5f6fc; bottom: 0; z-index: 1000;}
 
  header h1 { margin-top:22px;}
  header #nav { margin-right:20px; margin-top: 30px;}
@@ -241,6 +271,7 @@ header { position:fixed; top:0; left:0; width:100%; background:#f2f3f7b9; bottom
  .b_ {height: 3px; }
 
 #section01 h2 {top:35%;}   
+#section01 .line1 {position: absolute;bottom: 0%; left: 5%; width: 1px; background: #4061d6;}
 
 
 #section02
